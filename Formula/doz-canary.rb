@@ -8,10 +8,10 @@
 # `doz upgrade --channel stable|beta|canary` switches between them (your store and settings stay).
 class DozCanary < Formula
   desc "Fast, suspendable Linux sandboxes (micro-VMs) for your Mac"
-  homepage "https://github.com/dozer-sandbox/dozer-sandbox"
-  url "https://github.com/dozable/dozable/releases/download/v0.37.1/doz-0.37.1-macos-arm64.tar.gz"
-  version "0.37.1"
-  sha256 "bdb8fcd9010a14c25b00d8c25b95d299253186f27ae206cbf8a022030ab615f4"
+  homepage "https://github.com/dozable/dozable"
+  url "https://github.com/dozable/dozable/releases/download/v0.37.2/doz-0.37.2-macos-arm64.tar.gz"
+  version "0.37.2"
+  sha256 "c89353b99f9264eb6c9a8a8b2649fda8b30a98138f6bea25d1ccd1cba2a6c7af"
   license "MIT"
 
   conflicts_with "doz", because: "it installs the same doz command (another release channel)"

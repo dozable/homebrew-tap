@@ -8,7 +8,7 @@
 # `doz upgrade --channel stable|beta|canary` switches between them (your store and settings stay).
 class Doz < Formula
   desc "Fast, suspendable Linux sandboxes (micro-VMs) for your Mac"
-  homepage "https://github.com/dozer-sandbox/dozer-sandbox"
+  homepage "https://github.com/dozable/dozable"
   url "https://github.com/dozable/dozable/releases/download/v0.36.5/doz-0.36.5-macos-arm64.tar.gz"
   version "0.36.5"
   sha256 "d26adb588273308e835772a594151a49011cb376c140c10259f139a00d5c228d"
