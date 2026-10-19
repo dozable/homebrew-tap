@@ -9,9 +9,9 @@
 class DozCanary < Formula
   desc "Fast, suspendable Linux sandboxes (micro-VMs) for your Mac"
   homepage "https://github.com/dozer-sandbox/dozer-sandbox"
-  url "https://github.com/dozer-sandbox/dozer-sandbox/releases/download/v0.36.5/doz-0.36.5-macos-arm64.tar.gz"
-  version "0.36.5"
-  sha256 "d26adb588273308e835772a594151a49011cb376c140c10259f139a00d5c228d"
+  url "https://github.com/dozer-sandbox/dozer-sandbox/releases/download/v0.36.7/doz-0.36.7-macos-arm64.tar.gz"
+  version "0.36.7"
+  sha256 "0349d4e3293472631abed35e1c4a84cb45b28b9528e8073d7e3817ea59a007d2"
   license "MIT"
 
   conflicts_with "doz", because: "it installs the same doz command (another release channel)"
