@@ -9,9 +9,9 @@
 class DozBeta < Formula
   desc "Fast, suspendable Linux sandboxes (micro-VMs) for your Mac"
   homepage "https://github.com/dozable/dozable"
-  url "https://github.com/dozable/dozable/releases/download/v0.50.4/doz-0.50.4-macos-arm64.tar.gz"
-  version "0.50.4"
-  sha256 "8e92c3cd37475b9be3a9ce6309dad0c73403f6aef6c11ee4333a277fa6c310e9"
+  url "https://github.com/dozable/dozable/releases/download/v0.50.5/doz-0.50.5-macos-arm64.tar.gz"
+  version "0.50.5"
+  sha256 "137282f91433f02e406cb0295dfb847941a467a6e8884011b90e022eef54c58f"
   license "MIT"
 
   conflicts_with "doz", because: "it installs the same doz command (another release channel)"
