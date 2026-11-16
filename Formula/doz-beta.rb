@@ -43,7 +43,9 @@ class DozBeta < Formula
 
       Upgrading while a doz daemon runs is safe: it keeps running the previous build until
       `doz daemon restart` (sandboxes hibernate, and wake on the new build).
-      `doz uninstall` removes the store and settings; `brew uninstall doz-beta` removes doz itself.
+      To remove Dozable: `doz uninstall` FIRST (the store, the settings, and the login item if you added one
+      with doz daemon login-item on), then `brew uninstall doz-beta` (doz itself). A login item left behind
+      only fails harmlessly at each login.
     EOS
   end
 
