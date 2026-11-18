@@ -25,6 +25,9 @@ class DozBeta < Formula
     # binaries, the web UI) together in libexec/doz — doz finds them beside itself, through the bin link.
     libexec.install Dir["libexec/*"]
     bin.install_symlink libexec/"doz/doz"
+    # dozchat: the chat-room member, on the PATH for a Claude Code session run on this Mac without a fence (a fenced
+    # session has its own shim). Its default address on a Mac with no proxy set is this Mac's chat (127.0.0.1:8790).
+    bin.install_symlink libexec/"doz/dozchat-mac" => "dozchat"
   end
 
   # A daemon of the previous build keeps running (it runs its own copy) until `doz daemon restart`; say so.
@@ -54,6 +57,7 @@ class DozBeta < Formula
 
   test do
     assert_equal version.to_s, shell_output("#{bin}/doz --version").strip
+    assert_match "usage: dozchat", shell_output("#{bin}/dozchat --help")
     # doctor reads, never starts a daemon or a VM: a scratch store and settings, nothing created.
     ENV["DOZ_STORE"] = (testpath/"store").to_s
     ENV["XDG_CONFIG_HOME"] = (testpath/"config").to_s

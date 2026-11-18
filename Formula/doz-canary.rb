@@ -9,9 +9,9 @@
 class DozCanary < Formula
   desc "Fast, suspendable Linux sandboxes (micro-VMs) for your Mac"
   homepage "https://github.com/dozable/dozable"
-  url "https://github.com/dozable/dozable/releases/download/v0.51.9/doz-0.51.9-macos-arm64.tar.gz"
-  version "0.51.9"
-  sha256 "3eb7f8099be6a730dc8ac4660e44eecbd39c66e5c5f9ced259230642ac347ee8"
+  url "https://github.com/dozable/dozable/releases/download/v0.51.10/doz-0.51.10-macos-arm64.tar.gz"
+  version "0.51.10"
+  sha256 "c49dc992410b5129efb6ab3fe545e4af8b489c5024c25cd7cbd9df1c2ff4fcd7"
   license "MIT"
 
   conflicts_with "doz", because: "it installs the same doz command (another release channel)"
@@ -25,6 +25,9 @@ class DozCanary < Formula
     # binaries, the web UI) together in libexec/doz — doz finds them beside itself, through the bin link.
     libexec.install Dir["libexec/*"]
     bin.install_symlink libexec/"doz/doz"
+    # dozchat: the chat-room member, on the PATH for a Claude Code session run on this Mac without a fence (a fenced
+    # session has its own shim). Its default address on a Mac with no proxy set is this Mac's chat (127.0.0.1:8790).
+    bin.install_symlink libexec/"doz/dozchat-mac" => "dozchat"
   end
 
   # A daemon of the previous build keeps running (it runs its own copy) until `doz daemon restart`; say so.
@@ -54,6 +57,7 @@ class DozCanary < Formula
 
   test do
     assert_equal version.to_s, shell_output("#{bin}/doz --version").strip
+    assert_match "usage: dozchat", shell_output("#{bin}/dozchat --help")
     # doctor reads, never starts a daemon or a VM: a scratch store and settings, nothing created.
     ENV["DOZ_STORE"] = (testpath/"store").to_s
     ENV["XDG_CONFIG_HOME"] = (testpath/"config").to_s
